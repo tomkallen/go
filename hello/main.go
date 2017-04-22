@@ -6,9 +6,25 @@ var first string = "Hello"
 
 func main() {
 	second := "tiny hare"
-	Printer(first, second)
+	printer(first, second)
+	looper()
+	init := closure(15)
+	fmt.Println(init())
 }
 
-func Printer(a string, b string) {
-	fmt.Println(a, b)
+func printer(a string, b string) {
+	fmt.Printf("%v, %v! \n", a, b)
+}
+
+func looper() {
+	for i := 0; i <= 10; i++ {
+		fmt.Println(i)
+	}
+}
+
+func closure(number int) func() int {
+	add := 3
+	return func() int {
+		return number + add
+	}
 }
