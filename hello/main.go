@@ -8,8 +8,9 @@ func main() {
 	second := "tiny hare"
 	printer(first, second)
 	looper()
-	init := closure(15)
-	fmt.Println(init())
+	addThreeToFifteen := closure(15)
+	fmt.Println(addThreeToFifteen(3))
+	fmt.Println(closure(10)(4))
 }
 
 func printer(a string, b string) {
@@ -22,9 +23,8 @@ func looper() {
 	}
 }
 
-func closure(number int) func() int {
-	add := 3
-	return func() int {
+func closure(number int) func(add int) int {
+	return func(add int) int {
 		return number + add
 	}
 }
