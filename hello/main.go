@@ -11,6 +11,7 @@ func main() {
 	addThreeToFifteen := closure(15)
 	fmt.Println(addThreeToFifteen(3))
 	fmt.Println(closure(10)(4))
+	breaker()
 }
 
 func printer(a string, b string) {
@@ -26,5 +27,17 @@ func looper() {
 func closure(number int) func(add int) int {
 	return func(add int) int {
 		return number + add
+	}
+}
+
+func breaker() {
+	condition := true
+	x := 0
+	for condition {
+		x++
+		if x == 10 {
+			fmt.Println("broke out with value ", x)
+			break
+		}
 	}
 }
