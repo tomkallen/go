@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 var first string = "Hello"
+const ex rune = 2305888
 
 func main() {
 	second := "tiny hare"
@@ -16,7 +17,7 @@ func main() {
 }
 
 func printer(a string, b string) {
-	fmt.Printf("%v, %v! \n", a, b)
+	fmt.Printf("%v, %v%v \n", a, b, ex)
 }
 
 func looper() {
